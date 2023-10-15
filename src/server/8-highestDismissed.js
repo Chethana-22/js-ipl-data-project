@@ -48,7 +48,7 @@ function getplayerDismissed(deliveries) {
   
     result[prop] = value    
   
-    return JSON.stringify(result);
+    return result;
   }
   
   module.exports = getplayerDismissed;

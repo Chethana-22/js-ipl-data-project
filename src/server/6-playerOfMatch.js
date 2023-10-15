@@ -21,7 +21,7 @@ function getplayerOfMatch(matches) {
         }
     }
 
-    return JSON.stringify(seasons);
+    return seasons;
 }
 
 module.exports = getplayerOfMatch;

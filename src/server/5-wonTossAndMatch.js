@@ -6,7 +6,7 @@ function getWonTossAndMatch(matches) {
         }
     })
 
-    return JSON.stringify(winner);
+    return winner;
 }
 
 module.exports = getWonTossAndMatch;

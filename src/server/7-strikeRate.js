@@ -24,14 +24,13 @@ function getStrikeRate(matches, deliveries) {
 
         seasons[season] = strikeRate;
     }
-    return JSON.stringify(seasons);
+    return seasons;
 }
 
 function getSeasonIds(matches,season) {
     let ids = []
     matches.map(match => {
         if (match.season == season) {
-            3
             ids.push(match.id);
         }
     });

@@ -34,7 +34,7 @@ function getTop10Bowlers(matches, deliveries) {
     const sortEconomies = Object.entries(economiesOfBowlers).sort((bowler1, bowler2) => bowler1[1] - bowler2[1]);
     const result = sortEconomies.slice(0, 10);
 
-    return JSON.stringify(Object.fromEntries(result));
+    return Object.fromEntries(result);
 }
 
 module.exports = getTop10Bowlers;
