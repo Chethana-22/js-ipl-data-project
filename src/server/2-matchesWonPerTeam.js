@@ -15,7 +15,7 @@ function getMatchesWonPerYear(data) {
     }
   });
 
- return JSON.stringify(matchesWonData);
+ return matchesWonData;
 }
 
 module.exports = getMatchesWonPerYear;

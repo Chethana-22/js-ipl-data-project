@@ -3,7 +3,7 @@ function getMatchesPerYear(matches){
     matches.map(match =>{
         match.season in matchesPerYear ? matchesPerYear[match.season]++ : matchesPerYear[match.season]=1;
     });
-    return JSON.stringify(matchesPerYear);
+    return matchesPerYear;
 }
 
 module.exports = getMatchesPerYear;

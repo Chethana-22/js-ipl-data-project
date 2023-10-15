@@ -3,7 +3,6 @@ function getExtraRuns(matches, deliveries) {
 
   matches.map((match) => {
     if (match.season == "2016") {
-      3;
       ids2016.add(match.id);
     }
   });
@@ -17,7 +16,7 @@ function getExtraRuns(matches, deliveries) {
       : null
   );
 
-  return JSON.stringify(exatraRunPerTeam2016);
+  return exatraRunPerTeam2016;
 }
 
 module.exports = getExtraRuns;
