@@ -1,9 +1,6 @@
-let data =require("./data.js");
-const fs = require('fs');
-const path = require('path'); 
-
-let matchesWonData = {}
-data.matches.forEach((row) => {
+function getMatchesWonPerYear(data) {
+  let matchesWonData = {};
+  data.forEach((row) => {
     const year = row.season;
     const winner = row.winner;
 
@@ -18,12 +15,7 @@ data.matches.forEach((row) => {
     }
   });
 
+ return JSON.stringify(matchesWonData);
+}
 
-let jsonformat = JSON.stringify(matchesWonData);
-
-fs.writeFile(path.join(__dirname,'..','..', 'src', 'public/output', 'matchesWonPerTeamPerYear.json'), jsonformat, "utf8", (err) => {
-    if(err) {
-        console.log("Error:", err);
-        return ;
-    }
-});
+module.exports = getMatchesWonPerYear;
