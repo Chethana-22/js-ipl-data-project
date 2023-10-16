@@ -1,4 +1,4 @@
-const getBestBowlerEconomyInSuperOver = require('../src/server/9-highestEconmyPlayer.js');
+const getBestBowlerEconomyInSuperOver = require('../src/server/9-highestEconomyPlayer.js');
 
 test("highest_number_of_timeplayer_dismissed", () => {
     const sampleDeliveries = [
