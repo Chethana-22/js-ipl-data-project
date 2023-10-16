@@ -1,4 +1,4 @@
-const getBestBowlerEconomyInSuperOver = require('../src/server/9-highestEconomyPlayer.js');
+const getBowlerEconomy = require('../src/server/9-highestEconomyPlayer.js');
 
 test("highest_number_of_timeplayer_dismissed", () => {
     const sampleDeliveries = [
@@ -78,5 +78,5 @@ test("highest_number_of_timeplayer_dismissed", () => {
     
   const resultData ={ 'TS Mills': 15 };
 
-  expect(getBestBowlerEconomyInSuperOver(sampleDeliveries)).toEqual(resultData);
+  expect(getBowlerEconomy(sampleDeliveries)).toEqual(resultData);
 });

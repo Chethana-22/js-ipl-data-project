@@ -20,7 +20,7 @@ test("played_matches_per_year", () => {
     },
     {
       id: "4",
-      season: "2009",
+      season: "2013",
       city: "Mumbai",
     },
     {
@@ -35,7 +35,7 @@ test("played_matches_per_year", () => {
     },
     {
       id: "7",
-      season: "2009",
+      season: "2013",
       city: "Chandigarh",
     },
     {
@@ -52,18 +52,8 @@ test("played_matches_per_year", () => {
       id: "10",
       season: "2010",
       city: "Hyderabad",
-    },
-    {
-      id: "11",
-      season: "2013",
-      city: "Chandigarh",
-    },
-    {
-      id: "12",
-      season: "2009",
-      city: "Mumbai",
-    },
+    }
   ];
-  const resultData = { 2008: 1, 2009: 4, 2010: 3, 2011: 2, 2013: 2 };
+  const resultData = { '2008': 1, '2009': 1, '2010': 3, '2011': 2, '2013': 3 };
   expect(getMatchesPerYear(sampleData)).toEqual(resultData);
 });

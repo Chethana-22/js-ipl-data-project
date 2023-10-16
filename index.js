@@ -8,8 +8,8 @@ const getTop10Bowlers = require('./src/server/4-top10Bowlers.js');
 const getWonTossAndMatch = require('./src/server/5-wonTossAndMatch.js');
 const getplayerOfMatch = require('./src/server/6-playerOfMatch.js');
 const getStrikeRate = require('./src/server/7-strikeRate.js');
-const getplayerDismissed = require('./src/server/8-highestDismissed.js');
-const getBestBowlerEconomyInSuperOver = require('./src/server/9-highestEconomyPlayer.js');
+const highestPlayerDismissed = require('./src/server/8-highestDismissed.js');
+const getBowlerEconomy = require('./src/server/9-highestEconomyPlayer.js');
 function readCsv(file){
     const csvData = fs.readFileSync(file, 'utf-8');
     const {data } = Papa.parse(csvData, {
@@ -38,5 +38,5 @@ writefile('src/public/output/4-top10Economy.json', JSON.stringify(getTop10Bowler
 writefile('src/public/output/5-wonTossAndMatch.json',JSON.stringify(getWonTossAndMatch(matches)), null , 2);
 writefile('src/public/output/6-playerOfTheMatch.json',JSON.stringify(getplayerOfMatch(matches)), null, 2);
 writefile('src/public/output/7-strikeRate.json', JSON.stringify(getStrikeRate(matches, deliveries)), null, 2);
-writefile('src/public/output/8-highestDismissedPlayer.json',JSON.stringify(getStrikeRate(matches, deliveries)), null, 2);
-writefile('src/public/output/9-bestBowlerEconomyInSuperOver.json',JSON.stringify(getBestBowlerEconomyInSuperOver(deliveries)), null, 2);
+writefile('src/public/output/8-highestDismissedPlayer.json',JSON.stringify(highestPlayerDismissed( deliveries)), null, 2);
+writefile('src/public/output/9-bestBowlerEconomyInSuperOver.json',JSON.stringify(getBowlerEconomy(deliveries)), null, 2);

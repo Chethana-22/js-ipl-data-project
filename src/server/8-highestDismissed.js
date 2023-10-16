@@ -1,55 +1,34 @@
-function getplayerDismissed(deliveries) {
-    const res = deliveries.reduce((acc, curr) => {
-      if (!curr.player_dismissed) {              
-        return acc
-      }
-  
-      if (acc.hasOwnProperty(curr.player_dismissed)) {   
-  
-        if (acc[curr.player_dismissed][curr.bowler]) {
-          acc[curr.player_dismissed][curr.bowler]++
-        } else {
-          acc[curr.player_dismissed][curr.bowler] = 1
+function highestPlayerDismissed(deliveries) {
+    let batsmen = {};
+    deliveries.map(delivery => batsmen[delivery.batsman] = {});
+    let bat = "";
+    let dismissals = 0;
+    for (batsman in batsmen) {
+        batsmen[batsman] = getDis(batsman, deliveries)
+        let temp = batsmen[batsman]
+        if (temp != undefined) {
+            if (temp[1] > dismissals) {
+                bat = batsman
+                dismissals = temp[1];
+            }
         }
-      } else {
-        acc[curr.player_dismissed] = { [curr.bowler]: 1 }
-      }
-      return acc
-    }, {})
-  
-    let playerDismissal = Object.entries(res).map((ele) => {   
-      ele[1] = Object.entries(ele[1]).sort(
-  
-        (playerA, playerB) => playerB[1] - playerA[1]
-      )
-      let score = ele[1][0]                                  
-  
-      return [ele[0], score].flat()
-    })
-  
-    playerDismissal = playerDismissal 
-      .map((value) => value)
-      .sort((a, b) => {
-  
-        aOut = a[2]
-        bOut = b[2]
-        if (aOut > bOut) {
-          return -1
-        } else if (aOut < bOut) {
-          return 1
-        } else {
-          return 0
-        }
-      })
-  
-    let prop = `${playerDismissal[0][0]} by ${playerDismissal[0][1]}`
-    let value = playerDismissal[0][2]                                      
+    }
     let result = {}
-  
-    result[prop] = value    
-  
+    result[bat] = batsmen[bat]
     return result;
-  }
-  
-  module.exports = getplayerDismissed;
-  
+
+}
+
+function getDis(batsman, deliveries) {
+    let disByBat = {};
+    deliveries.map(delivery => {
+        if (delivery.batsman == batsman && delivery.player_dismissed != null && delivery.player_dismissed != "run out") {
+            disByBat[delivery.bowler] = (disByBat[delivery.bowler] || 0) + 1;
+        }
+    })
+    const sorted = Object.entries(disByBat).sort((bolwer1, bolwer2) => bolwer1[1] - bolwer2[1]);
+    return sorted[sorted.length - 1]
+}
+
+module.exports = highestPlayerDismissed;
+

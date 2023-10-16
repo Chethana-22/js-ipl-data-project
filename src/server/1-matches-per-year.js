@@ -7,3 +7,4 @@ function getMatchesPerYear(matches){
 }
 
 module.exports = getMatchesPerYear;
+
