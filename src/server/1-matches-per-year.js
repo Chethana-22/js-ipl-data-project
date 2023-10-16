@@ -1,10 +1,7 @@
 function getMatchesPerYear(matches){
-    const matchesPerYear = {};
-    matches.map(match =>{
-        match.season in matchesPerYear ? matchesPerYear[match.season]++ : matchesPerYear[match.season]=1;
-    });
-    return matchesPerYear;
+    return matches.reduce((accumulator, match) =>{
+        accumulator[match.season] = (accumulator[match.season] || 0) + 1;
+        return accumulator}, {});
 }
 
 module.exports = getMatchesPerYear;
-

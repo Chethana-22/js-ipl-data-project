@@ -7,16 +7,16 @@ function getExtraRuns(matches, deliveries) {
     }
   });
 
-  let exatraRunPerTeam2016 = {};
+  let extraRunPerTeam2016 = {};
   deliveries.map((delivery) =>
     ids2016.has(delivery.match_id)
-      ? (exatraRunPerTeam2016[delivery.bowling_team] =
-          (exatraRunPerTeam2016[delivery.bowling_team] || 0) +
+      ? (extraRunPerTeam2016[delivery.bowling_team] =
+          (extraRunPerTeam2016[delivery.bowling_team] || 0) +
           parseInt(delivery.extra_runs))
       : null
   );
 
-  return exatraRunPerTeam2016;
+  return extraRunPerTeam2016;
 }
 
 module.exports = getExtraRuns;

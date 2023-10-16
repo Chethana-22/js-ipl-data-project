@@ -1,8 +1,8 @@
-function getMatchesWonPerYear(data) {
+function getMatchesWonPerYear(matches) {
   let matchesWonData = {};
-  data.forEach((row) => {
-    const year = row.season;
-    const winner = row.winner;
+  matches.forEach((match) => {
+    const year = match.season;
+    const winner = match.winner;
 
     if (matchesWonData[year]) {
       if (matchesWonData[year][winner]) {

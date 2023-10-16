@@ -31,12 +31,13 @@ function writefile(file, resultArray){
 const matches = readCsv('src/data/matches.csv');
 const deliveries = readCsv('src/data/deliveries.csv');
 
+
 writefile('src/public/output/1-matches-per-year.json',JSON.stringify(getMatchesPerYear(matches),null,2));
 writefile('src/public/output/2-matchesWonPerTeamPerYear.json', JSON.stringify(getMatchesWonPerYear(matches)),null,2);
-writefile('src/public/output/3-extraRunsPerTeam2016.json', JSON.stringify(getExtraRuns(matches, deliveries)), null,2);
-writefile('src/public/output/4-top10Economy.json', JSON.stringify(getTop10Bowlers(matches, deliveries)), null, 2);
-writefile('src/public/output/5-wonTossAndMatch.json',JSON.stringify(getWonTossAndMatch(matches)), null , 2);
-writefile('src/public/output/6-playerOfTheMatch.json',JSON.stringify(getplayerOfMatch(matches)), null, 2);
-writefile('src/public/output/7-strikeRate.json', JSON.stringify(getStrikeRate(matches, deliveries)), null, 2);
-writefile('src/public/output/8-highestDismissedPlayer.json',JSON.stringify(highestPlayerDismissed( deliveries)), null, 2);
-writefile('src/public/output/9-bestBowlerEconomyInSuperOver.json',JSON.stringify(getBowlerEconomy(deliveries)), null, 2);
+// writefile('src/public/output/3-extraRunsPerTeam2016.json', JSON.stringify(getExtraRuns(matches, deliveries)), null,2);
+// writefile('src/public/output/4-top10Economy.json', JSON.stringify(getTop10Bowlers(matches, deliveries)), null, 2);
+// writefile('src/public/output/5-wonTossAndMatch.json',JSON.stringify(getWonTossAndMatch(matches)), null , 2);
+// writefile('src/public/output/6-playerOfTheMatch.json',JSON.stringify(getplayerOfMatch(matches)), null, 2);
+// writefile('src/public/output/7-strikeRate.json', JSON.stringify(getStrikeRate(matches, deliveries)), null, 2);
+// writefile('src/public/output/8-highestDismissedPlayer.json',JSON.stringify(highestPlayerDismissed( deliveries)), null, 2);
+// writefile('src/public/output/9-bestBowlerEconomyInSuperOver.json',JSON.stringify(getBowlerEconomy(deliveries)), null, 2);
