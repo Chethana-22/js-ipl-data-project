@@ -1,4 +1,4 @@
-function getExtraRuns(matches, deliveries) {
+function getExtraRunsConcededPerTeam2016(matches, deliveries) {
   let ids2016 = new Set();
 
   matches.map((match) => {
@@ -19,5 +19,5 @@ function getExtraRuns(matches, deliveries) {
   return extraRunPerTeam2016;
 }
 
-module.exports = getExtraRuns;
+module.exports = getExtraRunsConcededPerTeam2016;
 

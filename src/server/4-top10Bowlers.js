@@ -1,9 +1,8 @@
-function getTop10Bowlers(matches, deliveries) {
+function getTop10BowlersEconomy(matches, deliveries) {
     let ids2015 = new Set();
 
     matches.map(match => {
         if (match.season == "2015") {
-            3
             ids2015.add(match.id);
         }
     });
@@ -12,10 +11,11 @@ function getTop10Bowlers(matches, deliveries) {
     let noOfRunsByBowler = {};
     let economiesOfBowlers = {};
     deliveries.map((delivery) => {
-        if (ids2015.has(delivery.match_id) && delivery.wide_runs == '0' && delivery.noball_runs == '0') {
-            noOfBallsByBowler[delivery.bowler] = (noOfBallsByBowler[delivery.bowler] || 0) + 1; 
-        }
         if (ids2015.has(delivery.match_id)) {
+            if (delivery.wide_runs == '0' && delivery.noball_runs == '0') {
+                noOfBallsByBowler[delivery.bowler] = (noOfBallsByBowler[delivery.bowler] || 0) + 1;
+            }
+
             let totalRuns = parseInt(delivery.total_runs);
             let penaltyRuns = parseInt(delivery.penalty_runs);
             let legByRuns = parseInt(delivery.legbye_runs);
@@ -37,4 +37,4 @@ function getTop10Bowlers(matches, deliveries) {
     return Object.fromEntries(result);
 }
 
-module.exports = getTop10Bowlers;
+module.exports = getTop10BowlersEconomy;

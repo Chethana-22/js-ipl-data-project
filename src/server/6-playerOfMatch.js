@@ -1,5 +1,5 @@
-function getplayerOfMatch(matches) {
-    let seasons = {}
+function getHighestNumberOfPlayerOfMatch(matches) {
+    let seasons ={};
     let result = {};
     matches.map(match => {
         seasons[parseInt(match.season)] = "";
@@ -24,5 +24,4 @@ function getplayerOfMatch(matches) {
     return seasons;
 }
 
-module.exports = getplayerOfMatch;
-
+module.exports = getHighestNumberOfPlayerOfMatch;
