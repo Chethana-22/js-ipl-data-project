@@ -2,7 +2,7 @@ function getExtraRunsConcededPerTeam2016(matches, deliveries) {
   let ids2016 = new Set();
 
   matches.map((match) => {
-    if (match.season == "2016") {
+    if (match.season == '2016') {
       ids2016.add(match.id);
     }
   });
@@ -13,11 +13,10 @@ function getExtraRunsConcededPerTeam2016(matches, deliveries) {
       ? (extraRunPerTeam2016[delivery.bowling_team] =
           (extraRunPerTeam2016[delivery.bowling_team] || 0) +
           parseInt(delivery.extra_runs))
-      : null
+      : null,
   );
 
   return extraRunPerTeam2016;
 }
 
 module.exports = getExtraRunsConcededPerTeam2016;
-
