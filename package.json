@@ -12,7 +12,9 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,json}": ["eslint . --fix", "prettier --write ."]
+    "**/*.{js,jsx}": [
+      "prettier --single-quote --write"
+    ]
   },
   "author": "",
   "license": "ISC",
